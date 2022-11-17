@@ -32,7 +32,7 @@ export class InMemoryDocumentGateway implements DocumentGateway {
     return res
   }
 
-  async create(name: string, type: string, clientId: string): Promise<Document> {
+  async upload(name: string, type: string, clientId: string): Promise<Document> {
     const newDocument = {
       id: this.uuidGenerator.generate(),
       name,
