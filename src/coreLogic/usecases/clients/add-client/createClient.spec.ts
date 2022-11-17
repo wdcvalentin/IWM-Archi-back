@@ -1,6 +1,6 @@
-import { FakeUuidGenerator } from "../../../adapters/secondary/fakeUuidGenerator"
-import { InMemoryClientGateway } from "../../../adapters/secondary/InMemoryClientsGateway"
-import { Client } from "../clients-listing/client"
+import { FakeUuidGenerator } from "../../../../adapters/secondary/fakeUuidGenerator"
+import { InMemoryClientGateway } from "../../../../adapters/secondary/InMemoryClientsGateway"
+import { Client } from "../../../gateways/client"
 import { createClient } from "./createClient"
 
 describe('Create client', () => {

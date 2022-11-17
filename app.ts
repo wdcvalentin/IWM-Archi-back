@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import clientsRoutes from './src/routes/clientsRoutes.js'
-import { listClients } from './src/coreLogic/usecases/clients-listing/listClients';
+import { listClients } from './src/coreLogic/usecases/clients/clients-listing/listClients';
 import { InMemoryClientGateway } from './src/adapters/secondary/InMemoryClientsGateway';
 
 const app: Express = express();

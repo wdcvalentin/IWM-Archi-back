@@ -1,6 +1,6 @@
-import { FakeUuidGenerator } from "../../../adapters/secondary/fakeUuidGenerator"
-import { ClientDoesNotExistsError, InMemoryClientGateway } from "../../../adapters/secondary/InMemoryClientsGateway"
-import { Client } from "../clients-listing/client"
+import { FakeUuidGenerator } from "../../../../adapters/secondary/fakeUuidGenerator"
+import { ClientDoesNotExistsError, InMemoryClientGateway } from "../../../../adapters/secondary/InMemoryClientsGateway"
+import { Client } from "../../../gateways/client"
 import { getClient } from "./getClient"
 
 describe('Get client', () => {

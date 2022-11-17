@@ -1,8 +1,8 @@
 import { listClients } from './listClients'
-import { Client } from './client'
-import { ClientGateway } from '../../gateways/ClientGateway'
-import { FakeUuidGenerator } from '../../../adapters/secondary/fakeUuidGenerator'
-import { InMemoryClientGateway } from '../../../adapters/secondary/InMemoryClientsGateway'
+import { Client } from '../../../gateways/client'
+import { ClientGateway } from '../../../gateways/ClientGateway'
+import { FakeUuidGenerator } from '../../../../adapters/secondary/fakeUuidGenerator'
+import { InMemoryClientGateway } from '../../../../adapters/secondary/InMemoryClientsGateway'
 
 describe('List clients', () => {
   let clientGateway: any

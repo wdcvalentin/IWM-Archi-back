@@ -1,4 +1,4 @@
-import { Client } from "../usecases/clients-listing/client";
+import { Client } from "./client";
 
 export interface ClientGateway {
   listAll(): Promise<Array<Client>>

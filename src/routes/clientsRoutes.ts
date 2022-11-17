@@ -1,12 +1,12 @@
 import express, { Express, Request, Response } from 'express';
 import cors = require('cors')
-import { listClients } from '../coreLogic/usecases/clients-listing/listClients';
-import { getClient } from '../coreLogic/usecases/client-get/getClient';
+import { listClients } from '../coreLogic/usecases/clients/clients-listing/listClients';
+import { getClient } from '../coreLogic/usecases/clients/client-get/getClient';
 import { InMemoryClientGateway } from '../adapters/secondary/InMemoryClientsGateway';
-import { createClient } from '../coreLogic/usecases/add-client/createClient';
+import { createClient } from '../coreLogic/usecases/clients/add-client/createClient';
 import { clientGateway } from '../../dependencies';
-import { updateClient } from '../coreLogic/usecases/update-client/updateClient';
-import { deleteClient } from '../coreLogic/usecases/delete-client/deleteClient';
+import { updateClient } from '../coreLogic/usecases/clients/update-client/updateClient';
+import { deleteClient } from '../coreLogic/usecases/clients/delete-client/deleteClient';
 
 const app = express()
 app.use(express.json())

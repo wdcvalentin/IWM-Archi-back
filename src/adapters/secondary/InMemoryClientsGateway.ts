@@ -1,6 +1,6 @@
 import { ClientGateway } from '../../coreLogic/gateways/ClientGateway'
 import { UuidGenerator } from '../../coreLogic/gateways/uuidGenerator'
-import { Client } from '../../coreLogic/usecases/clients-listing/client'
+import { Client } from '../../coreLogic/gateways/client'
 
 export class ClientDoesNotExistsError extends Error {
   constructor(id: string) {
