@@ -23,4 +23,21 @@ export class InMemoryClientGateway implements ClientGateway {
   async listAll(): Promise<Array<Client>> {
     return Promise.resolve(this.clients)
   }
+
+  async getById(id: string): Promise<Client> {
+    const res = this.clients.find((p) => p.id === id)
+    if (!res) {
+      throw new ClientDoesNotExistsError(id)
+    }
+    return res
+  }
+
+  async create(name: string): Promise<Client> {
+    const newClient = {
+      id: this.uuidGenerator.generate(),
+      name
+    }
+    this.clients.push(newClient)
+    return Promise.resolve(newClient)
+  }
 }
