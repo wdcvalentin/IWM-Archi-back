@@ -7,6 +7,7 @@ describe('Edit a client', () => {
     let clientGateway: InMemoryClientGateway
     const client: Client = { id: 'abc123', name: 'Henri Martin' }
     let res: any
+    const updatedClient: Client = { id: 'abc123', name: 'Henriette Martinet' }
 
     beforeEach(() => {
         const uuidGenerator = new FakeUuidGenerator()
@@ -15,9 +16,9 @@ describe('Edit a client', () => {
     })
 
     it('should edit an existing client', async () => {
-        const updatedClient: Client = { id: 'abc123', name: 'Henriette Martinet' }
         res = await updateClient(updatedClient, clientGateway)
         expect(res).toEqual(updatedClient)
+        expect(await clientGateway.getById(client.id)).toEqual(updatedClient)
     })
 
     const givenSomeExistingClients = (...clients: Array<Client>) => {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668692698282" clover="3.2.0">
-  <project timestamp="1668692698282" name="All files">
+<coverage generated="1668695705592" clover="3.2.0">
+  <project timestamp="1668695705592" name="All files">
     <metrics statements="35" coveredstatements="35" conditionals="1" coveredconditionals="1" methods="24" coveredmethods="24" elements="60" coveredelements="60" complexity="0" loc="35" ncloc="35" packages="6" files="7" classes="7"/>
     <package name="adapters.secondary">
       <metrics statements="25" coveredstatements="25" conditionals="1" coveredconditionals="1" methods="14" coveredmethods="14"/>
@@ -13,10 +13,10 @@
         <line num="16" count="9" type="stmt"/>
         <line num="20" count="6" type="stmt"/>
         <line num="24" count="3" type="stmt"/>
-        <line num="28" count="6" type="stmt"/>
-        <line num="29" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="29" count="5" type="cond" truecount="1" falsecount="0"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
         <line num="41" count="2" type="stmt"/>
