@@ -5,4 +5,5 @@ export interface ClientGateway {
   getById(id: string): Promise<Client>
   create(name: string): Promise<Client>
   update(client: Client): Promise<Client>
+  delete(client: Client): Promise<Boolean>
 }
