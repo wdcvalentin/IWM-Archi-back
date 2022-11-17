@@ -16,9 +16,8 @@ describe('delete a client', () => {
     })
 
     it('should edit an existing client', async () => {
-        isDeleted = await deleteClient(client, clientGateway)
+        isDeleted = await deleteClient(client.id, clientGateway)
         const allClients = await clientGateway.listAll()
-        console.log(allClients)
         
         expect(isDeleted).toBe(true)
         expect(allClients).toEqual([client2])

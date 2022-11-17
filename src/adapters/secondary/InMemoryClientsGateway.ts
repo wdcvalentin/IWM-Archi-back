@@ -48,9 +48,9 @@ export class InMemoryClientGateway implements ClientGateway {
     return Promise.resolve(client)
   }
 
-  async delete(client: Client): Promise<Boolean> {
-    this.clients = this.clients.filter(c => c.id !== client.id)
-    console.log(this.clients)
+  async delete(id: string): Promise<Boolean> {
+    this.clients = this.clients.filter(c => c.id !== id)
+    
     return Promise.resolve(true)
   }
 }

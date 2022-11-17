@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668689358474" clover="3.2.0">
-  <project timestamp="1668689358474" name="All files">
-    <metrics statements="36" coveredstatements="36" conditionals="1" coveredconditionals="1" methods="24" coveredmethods="24" elements="61" coveredelements="61" complexity="0" loc="36" ncloc="36" packages="6" files="7" classes="7"/>
+<coverage generated="1668692698282" clover="3.2.0">
+  <project timestamp="1668692698282" name="All files">
+    <metrics statements="35" coveredstatements="35" conditionals="1" coveredconditionals="1" methods="24" coveredmethods="24" elements="60" coveredelements="60" complexity="0" loc="35" ncloc="35" packages="6" files="7" classes="7"/>
     <package name="adapters.secondary">
-      <metrics statements="26" coveredstatements="26" conditionals="1" coveredconditionals="1" methods="14" coveredmethods="14"/>
+      <metrics statements="25" coveredstatements="25" conditionals="1" coveredconditionals="1" methods="14" coveredmethods="14"/>
       <file name="InMemoryClientsGateway.ts" path="/Users/alizeegillouaye/Documents/IWM-Archi-back/src/adapters/secondary/InMemoryClientsGateway.ts">
-        <metrics statements="20" coveredstatements="20" conditionals="1" coveredconditionals="1" methods="11" coveredmethods="11"/>
+        <metrics statements="19" coveredstatements="19" conditionals="1" coveredconditionals="1" methods="11" coveredmethods="11"/>
         <line num="5" count="5" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="11" count="5" type="stmt"/>
@@ -24,7 +24,6 @@
         <line num="46" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="52" count="2" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
       </file>
       <file name="fakeUuidGenerator.ts" path="/Users/alizeegillouaye/Documents/IWM-Archi-back/src/adapters/secondary/fakeUuidGenerator.ts">
