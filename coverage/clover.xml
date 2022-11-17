@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1668679859761" clover="3.2.0">
+  <project timestamp="1668679859761" name="All files">
+    <metrics statements="15" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="6" elements="24" coveredelements="16" complexity="0" loc="15" ncloc="15" packages="2" files="3" classes="3"/>
+    <package name="adapters.secondary">
+      <metrics statements="13" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="4"/>
+      <file name="InMemoryClientsGateway.ts" path="/Users/alizeegillouaye/Documents/IWM-Archi-back/src/adapters/secondary/InMemoryClientsGateway.ts">
+        <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+      </file>
+      <file name="fakeUuidGenerator.ts" path="/Users/alizeegillouaye/Documents/IWM-Archi-back/src/adapters/secondary/fakeUuidGenerator.ts">
+        <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="coreLogic.usecases.clients-listing">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="listClients.ts" path="/Users/alizeegillouaye/Documents/IWM-Archi-back/src/coreLogic/usecases/clients-listing/listClients.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
