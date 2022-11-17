@@ -23,7 +23,7 @@ describe('Get client', () => {
       await expect(getClient('notExisting', clientGateway)).rejects.toThrow(ClientDoesNotExistsError)
     })
 
-    const givenSomeExistingClients = (...products: Array<Client>) => {
-        clientGateway.feedWith(...products)
+    const givenSomeExistingClients = (...clients: Array<Client>) => {
+        clientGateway.feedWith(...clients)
     }
 })

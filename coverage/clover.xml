@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668681891193" clover="3.2.0">
-  <project timestamp="1668681891193" name="All files">
-    <metrics statements="26" coveredstatements="26" conditionals="1" coveredconditionals="1" methods="16" coveredmethods="16" elements="43" coveredelements="43" complexity="0" loc="26" ncloc="26" packages="4" files="5" classes="5"/>
+<coverage generated="1668683813349" clover="3.2.0">
+  <project timestamp="1668683813349" name="All files">
+    <metrics statements="31" coveredstatements="31" conditionals="1" coveredconditionals="1" methods="20" coveredmethods="20" elements="52" coveredelements="52" complexity="0" loc="31" ncloc="31" packages="5" files="6" classes="6"/>
     <package name="adapters.secondary">
-      <metrics statements="20" coveredstatements="20" conditionals="1" coveredconditionals="1" methods="10" coveredmethods="10"/>
+      <metrics statements="23" coveredstatements="23" conditionals="1" coveredconditionals="1" methods="12" coveredmethods="12"/>
       <file name="InMemoryClientsGateway.ts" path="/Users/alizeegillouaye/Documents/IWM-Archi-back/src/adapters/secondary/InMemoryClientsGateway.ts">
-        <metrics statements="14" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="7"/>
-        <line num="5" count="3" type="stmt"/>
+        <metrics statements="17" coveredstatements="17" conditionals="1" coveredconditionals="1" methods="9" coveredmethods="9"/>
+        <line num="5" count="4" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
-        <line num="28" count="5" type="stmt"/>
-        <line num="29" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
       </file>
       <file name="fakeUuidGenerator.ts" path="/Users/alizeegillouaye/Documents/IWM-Archi-back/src/adapters/secondary/fakeUuidGenerator.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
       </file>
     </package>
     <package name="coreLogic.usecases.add-client">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="createClient.ts" path="/Users/alizeegillouaye/Documents/IWM-Archi-back/src/coreLogic/usecases/add-client/createClient.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
       </file>
     </package>
     <package name="coreLogic.usecases.client-get">
@@ -53,6 +56,14 @@
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="coreLogic.usecases.update-client">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="updateClient.ts" path="/Users/alizeegillouaye/Documents/IWM-Archi-back/src/coreLogic/usecases/update-client/updateClient.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
       </file>
     </package>
   </project>

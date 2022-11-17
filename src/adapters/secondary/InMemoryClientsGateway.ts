@@ -40,4 +40,11 @@ export class InMemoryClientGateway implements ClientGateway {
     this.clients.push(newClient)
     return Promise.resolve(newClient)
   }
+
+  async update(client: Client): Promise<Client> {
+    const index = this.clients.findIndex((c => c.id === client.id))
+    this.clients[index] = client
+
+    return Promise.resolve(client)
+  }
 }

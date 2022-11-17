@@ -24,8 +24,8 @@ describe('Create client', () => {
       expect(res).toEqual(expectedClient)
     })
     
-    // it('should save the created client', async () => {
-    //   expect(await clientGateway.getById(expectedClient.id)).toEqual(expectedClient)
-    // })
+    it('should save the created client', async () => {
+      expect(await clientGateway.getById(expectedClient.id)).toEqual(expectedClient)
+    })
   })
 })
