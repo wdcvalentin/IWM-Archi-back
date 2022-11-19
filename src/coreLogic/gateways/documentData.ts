@@ -12,6 +12,7 @@ export interface DocFile {
     mimetype:     string;
     md5:          string;
     idDocument?:  string;
+    mv:           Function
 }
 
 export interface Data {

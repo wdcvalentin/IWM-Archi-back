@@ -11,7 +11,6 @@ export class DocumentDoesNotExistsError extends Error {
 
 export class InMemoryDocumentGateway implements DocumentGateway {
   private documents: Array<Document> = []
-  private documentsData: Array<DocFile> = []
   private uuidGenerator: UuidGenerator
 
   constructor(uuidGenerator: UuidGenerator) {
@@ -26,29 +25,23 @@ export class InMemoryDocumentGateway implements DocumentGateway {
     return Promise.resolve(this.documents)
   }
 
-  async getById(id: string): Promise<DocFile> {
-    const res = this.documentsData.find((p) => p.idDocument === id)
+  async getById(id: string): Promise<Document | {}> {
+    const res = this.documents.find((p) => p.id === id)
     if (!res) {
-      throw new DocumentDoesNotExistsError(id)
+      return {}
     }
     return res
   }
 
   async upload(documentData: DocFile, clientId: string): Promise<Document> {
-    const newId: string = this.uuidGenerator.generate()
     const newDocument = {
-      id: newId,
-      name: documentData?.name,
+      id: this.uuidGenerator.generate(),
+      name: documentData.name,
       type: 'pdf',
       clientId
     }
-    const documentFile: DocFile = {
-      ...documentData,
-      idDocument: newId
-    }
-    this.documentsData.push(documentFile)
+    documentData.mv('./uploads/' + documentData.name);
     this.documents.push(newDocument)
-    console.log('this.documentsData', this.documentsData)
     return Promise.resolve(newDocument)
   }
 

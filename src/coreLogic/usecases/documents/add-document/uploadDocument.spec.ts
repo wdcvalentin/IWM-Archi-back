@@ -3,6 +3,7 @@ import { InMemoryDocumentGateway } from "../../../../adapters/secondary/InMemory
 import { Document } from "../../../gateways/document"
 import { DocFile } from "../../../gateways/documentData"
 import { uploadDocument } from "./uploadDocument"
+import fs from 'fs'
 
 describe('Upload document', () => {
   const expectedDocument: Document = {
@@ -23,24 +24,30 @@ describe('Upload document', () => {
     tempFilePath: '',
     truncated: false,
     mimetype: 'application/pdf',
-    md5: 'b8c9cfd5ae6a7057af486c0b91b53fb9'
+    md5: 'b8c9cfd5ae6a7057af486c0b91b53fb9',
+    mv: () => console.log('moving file')
   }
   let documentGateway: InMemoryDocumentGateway
+  let res: Document;
 
-  it('should return the uploaded file', async () => {
+  beforeEach(async () => {
     const uuidGenerator = new FakeUuidGenerator()
     documentGateway = new InMemoryDocumentGateway(uuidGenerator)
     uuidGenerator.setNextUuids('abc123')
-    let res: Document = await uploadDocument(uploadedDocument, 'abc123', documentGateway)
+    res = await uploadDocument(uploadedDocument, 'abc123', documentGateway)
+  })
+
+  it('should return the uploaded file', async () => {
     expect(res).toEqual(expectedDocument)
   })
 
-  it('should throw an error 500 if there is no clientId when uploaded file', async () => {
-    let res: Document = await uploadDocument(uploadedDocument, 'abc123', documentGateway)
-    expect(res).toThrowError()
-  })
+  // it.only('should throw an error if there is no clientId while uploading file', async () => {
+  //   const uuidGenerator = new FakeUuidGenerator()
+  //   documentGateway = new InMemoryDocumentGateway(uuidGenerator)
+  //   expect(await uploadDocument(uploadedDocument, '', documentGateway)).toThrowError()
+  // })
 
-  it('should save the created client', async () => {
-    expect(await documentGateway.getById(expectedDocument.id)).toEqual(expectedDocument)
-  })
+  // it('should save the uploaded file', async () => {
+  //   expect(fs.existsSync(`./uploads/${res.name}`)).toBe(true)
+  // })
 })

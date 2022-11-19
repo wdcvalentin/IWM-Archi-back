@@ -7,5 +7,9 @@ export const uploadDocument = async (
   clientId: string,
   documentGateway: DocumentGateway
 ): Promise<Document> => {
+  if (!clientId) {
+    throw Error('empty clientId')
+  }
+
   return await documentGateway.upload(file, clientId)
 }
