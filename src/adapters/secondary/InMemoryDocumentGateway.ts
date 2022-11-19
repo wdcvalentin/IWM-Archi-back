@@ -55,9 +55,8 @@ export class InMemoryDocumentGateway implements DocumentGateway {
     return Promise.resolve(document)
   }
 
-  async delete(id: string): Promise<Boolean> {
+  async delete(id: string): Promise<Array<Document>> {
     this.documents = this.documents.filter(d => d.id !== id)
-    
-    return Promise.resolve(true)
+    return Promise.resolve(this.documents)
   }
 }

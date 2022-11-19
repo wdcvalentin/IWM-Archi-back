@@ -7,6 +7,7 @@ import { listDocuments } from '../coreLogic/usecases/documents/documents-listing
 import cors = require('cors')
 import fileUpload = require('express-fileupload');
 import { Document } from '../coreLogic/gateways/document';
+import { deleteDocument } from '../coreLogic/usecases/documents/delete-document/deleteDocument';
 
 const app = express()
 app.use(express.json())
@@ -54,4 +55,14 @@ app.post('/upload', fileUpload({ createParentPath: true }), async (req: Request,
     }
 })
 
+app.delete('/:id', async (req: Request, res: Response) => {
+    const { id } = req.params
+    if (!id) res.status(500).send('No document identification')
+    try {
+        const newDocuments = await deleteDocument(id, dGateway)
+        res.send(newDocuments);
+    } catch (error: any) {
+        res.status(404).send(error.message)
+    }
+})
 export default app

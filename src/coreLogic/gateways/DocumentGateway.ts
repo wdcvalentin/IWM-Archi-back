@@ -6,5 +6,5 @@ export interface DocumentGateway {
   getById(id: string): Promise<Document | {}>
   upload(documentData: DocFile, clientId: string): Promise<Document>
   update(document: Document): Promise<Document>
-  delete(id: string): Promise<Boolean>
+  delete(id: string): Promise<Array<Document>>
 }
