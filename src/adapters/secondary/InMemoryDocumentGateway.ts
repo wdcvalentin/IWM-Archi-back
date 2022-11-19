@@ -1,6 +1,7 @@
+import { Document } from '../../coreLogic/gateways/document'
+import { DocFile } from '../../coreLogic/gateways/documentData'
 import { DocumentGateway } from '../../coreLogic/gateways/DocumentGateway'
 import { UuidGenerator } from '../../coreLogic/gateways/uuidGenerator'
-import { Document } from '../../coreLogic/gateways/document'
 
 export class DocumentDoesNotExistsError extends Error {
   constructor(id: string) {
@@ -24,21 +25,22 @@ export class InMemoryDocumentGateway implements DocumentGateway {
     return Promise.resolve(this.documents)
   }
 
-  async getById(id: string): Promise<Document> {
+  async getById(id: string): Promise<Document | {}> {
     const res = this.documents.find((p) => p.id === id)
     if (!res) {
-      throw new DocumentDoesNotExistsError(id)
+      return {}
     }
     return res
   }
 
-  async create(name: string, type: string, clientId: string): Promise<Document> {
+  async upload(documentData: DocFile, clientId: string): Promise<Document> {
     const newDocument = {
       id: this.uuidGenerator.generate(),
-      name,
-      type, 
+      name: documentData.name,
+      type: 'pdf',
       clientId
     }
+    documentData.mv('./uploads/' + documentData.name);
     this.documents.push(newDocument)
     return Promise.resolve(newDocument)
   }
