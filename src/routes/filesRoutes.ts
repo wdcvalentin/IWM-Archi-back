@@ -30,7 +30,7 @@ app.get('/:id', async (req: Request, res: Response) => {
     const { id } = req.params
     if (!id) res.status(500).send('No document identification')
     try {
-        const document: Document = await getDocumentById(id, dGateway)
+        const document: any | Document | {} = await getDocumentById(id, dGateway)
         if (!document) {
             res.status(500).send('No document')
         }
@@ -46,7 +46,7 @@ app.get('/:id', async (req: Request, res: Response) => {
 app.post('/upload', fileUpload({ createParentPath: true }), async (req: Request, res: Response) => {
     if (!req.body.id) res.status(500).send('No client identification')
     const clientId: string = req.body.id
-    const { files } = req.files
+    const { files } : any | fileUpload.FileArray | undefined | null = req.files
     try {
         const document = await uploadDocument(files, clientId, dGateway)
         res.send(JSON.stringify(document))

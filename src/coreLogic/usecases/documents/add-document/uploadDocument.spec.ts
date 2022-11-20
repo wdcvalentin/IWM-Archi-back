@@ -3,7 +3,19 @@ import { InMemoryDocumentGateway } from "../../../../adapters/secondary/InMemory
 import { Document } from "../../../gateways/document"
 import { DocFile } from "../../../gateways/documentData"
 import { uploadDocument } from "./uploadDocument"
-import fs from 'fs'
+import request from 'supertest';
+import app from '../../../../routes/filesRoutes'
+import fileUpload from "express-fileupload"
+// import fs from 'fs'
+
+// describe('Good Home Routes', function () {
+
+//   test('responds to /', async () => {
+//     const res = await request(app).get('/');
+//     expect(res.statusCode).toBe(200);
+//   });
+
+// });
 
 describe('Upload document', () => {
   const expectedDocument: Document = {
@@ -13,32 +25,38 @@ describe('Upload document', () => {
     clientId: 'abc123'
   }
 
-  const uploadedDocument: DocFile = {
-    name: 'data.pdf',
-    data: {
-      type: 'Buffer',
-      data: [1, 2, 3]
-    },
-    size: 208494,
-    encoding: '7bit',
-    tempFilePath: '',
-    truncated: false,
-    mimetype: 'application/pdf',
-    md5: 'b8c9cfd5ae6a7057af486c0b91b53fb9',
-    mv: () => console.log('moving file')
-  }
+  // const uploadedDocument: DocFile = {
+  //   name: 'data.pdf',
+  //   data: {
+  //     type: 'Buffer',
+  //     data: [1, 2, 3]
+  //   },
+  //   size: 208494,
+  //   encoding: '7bit',
+  //   tempFilePath: '',
+  //   truncated: false,
+  //   mimetype: 'application/pdf',
+  //   md5: 'b8c9cfd5ae6a7057af486c0b91b53fb9',
+  //   mv: () => jest.fn().mockReturnValue('default')
+  // }
+  let uploadedDocument: fileUpload.UploadedFile
   let documentGateway: InMemoryDocumentGateway
   let res: Document;
 
-  beforeEach(async () => {
-    const uuidGenerator = new FakeUuidGenerator()
-    documentGateway = new InMemoryDocumentGateway(uuidGenerator)
-    uuidGenerator.setNextUuids('abc123')
-    res = await uploadDocument(uploadedDocument, 'abc123', documentGateway)
-  })
+  // beforeEach(async () => {
+  //   const uuidGenerator = new FakeUuidGenerator()
+  //   documentGateway = new InMemoryDocumentGateway(uuidGenerator)
+  //   uuidGenerator.setNextUuids('abc123')
+  //   res = await uploadDocument(uploadedDocument, 'abc123', documentGateway)
+  // })
 
   it('should return the uploaded file', async () => {
-    expect(res).toEqual(expectedDocument)
+    const res = await request(app)
+      .post('/upload')
+      .set('content-type', 'text/html; charset=utf-8')
+      .field('id', 'abc123')
+      .attach('file', `${__dirname}/test_uploads/data.pdf`)
+    expect(res.statusCode).toBe(200);
   })
 
   // it.only('should throw an error if there is no clientId while uploading file', async () => {

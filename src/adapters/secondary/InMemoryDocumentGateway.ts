@@ -1,3 +1,4 @@
+import fileUpload from 'express-fileupload'
 import { Document } from '../../coreLogic/gateways/document'
 import { DocFile } from '../../coreLogic/gateways/documentData'
 import { DocumentGateway } from '../../coreLogic/gateways/DocumentGateway'
@@ -33,14 +34,14 @@ export class InMemoryDocumentGateway implements DocumentGateway {
     return res
   }
 
-  async upload(documentData: DocFile, clientId: string): Promise<Document> {
+  async upload(documentData: fileUpload.UploadedFile | undefined | null, clientId: string): Promise<Document> {
     const newDocument = {
       id: this.uuidGenerator.generate(),
-      name: documentData.name,
+      name: documentData?.name,
       type: 'pdf',
       clientId
     }
-    documentData.mv('./uploads/' + documentData.name);
+    documentData?.mv('./uploads/' + documentData.name);
     this.documents.push(newDocument)
     return Promise.resolve(newDocument)
   }
