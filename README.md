@@ -1,5 +1,8 @@
 # Back TDD IWM
 
+## Group
+ Valentin Waché de Corbie, Eliott Demont, Alizée Gillouaye, Axel Guillon, Julien Da Costa
+
 ## Launch the app
 ```sh
 npm install
