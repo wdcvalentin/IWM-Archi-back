@@ -8,6 +8,7 @@ import cors = require('cors')
 import fileUpload = require('express-fileupload');
 import { Document } from '../coreLogic/gateways/document';
 import { deleteDocument } from '../coreLogic/usecases/documents/delete-document/deleteDocument';
+import { isPdf } from '../coreLogic/usecases/utils/isPdf';
 
 const app = express()
 app.use(express.json())
@@ -44,9 +45,15 @@ app.get('/:id', async (req: Request, res: Response) => {
 })
 
 app.post('/upload', fileUpload({ createParentPath: true }), async (req: Request, res: Response) => {
-    if (!req.body.id) res.status(500).send('No client identification')
+    if (!req.body.id) { 
+        return res.status(500).send('No client identification')
+    }
     const clientId: string = req.body.id
-    const { files } : any | fileUpload.FileArray | undefined | null = req.files
+    const files: any | fileUpload.FileArray | undefined | null = Object.values(req.files!)[0]
+    if (!isPdf(files.name)) {
+        return res.status(500).send('extension not allowed')
+    }
+
     try {
         const document = await uploadDocument(files, clientId, dGateway)
         res.send(JSON.stringify(document))

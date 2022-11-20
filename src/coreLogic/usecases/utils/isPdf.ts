@@ -1,0 +1,1 @@
+export const isPdf = (file: string): Boolean => file.split('.').pop() === 'pdf'
